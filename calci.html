@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #fde5c7;
+            margin: 0%;
+            padding: 0%;
+        }
+        .heading{
+            text-align: center;
+            color: black;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .box{
+            border: 3px solid black;
+            border-radius: 30px;
+            text-align: center;
+            display: flex;
+            padding: 5px;
+            margin: 7px;
+            height: 40px;
+            width: 155px;
+        }
+        .box:hover{
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px 2px #f1c48d;
+            transition: 0.5s;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .result{
+            margin: 18px;
+            text-align: center;
+            font-size: 29px;
+        }
+        .btn{
+            text-align: center;
+            height: 30px;
+            width: 190px;
+            margin: 6px;
+            border-radius: 6px;
+        }
+        .btn:hover{
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px 2px #f1c48d;
+            transition: 0.5s;
+        }
+        .click{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .foot{
+            font-size: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">The Sum Of Two Numbers</h1>
+    <div class="container">
+    <input class="box" type="number" id="num1" placeholder="Enter First Number" onkeyup="up()"/>
+    <input class="box" type="number" id="num2" placeholder="Enter Second Number" onkeyup="up()"/>
+    </div>
+    <div class="result" id="ans">Result:</div>
+    <div class="click">
+    <button class="btn" id="btn" onclick="reset()">Reset Sum</button>
+    <br/>
+    </div>
+    <h1 class="foot"><i>Have A Nice Day!!!!!</i></h1>
+    <script>
+        const inputBox1 = document.getElementById("num1");
+        const inputBox2 = document.getElementById("num2");
+        const answertText = document.getElementById("ans");
+        function sum() {
+        const val1 = parseInt(inputBox1.value);
+        const val2 = parseInt(inputBox2.value);
+        const sum = val1 + val2;
+        answertText.innerText = `Result : ${sum}`;
+        }
+  
+        function reset() {
+          inputBox1.value = " ";
+          inputBox2.value = " ";
+          answertText.innerText = `Result :`;
+        }
+        function up(){
+            const val1 = parseInt(inputBox1.value);
+            const val2 = parseInt(inputBox2.value);
+            const sum = val1 + val2;
+            answertText.innerText = `Result : ${sum}`;
+        }
+      </script>
+  
+</body>
+</html>
